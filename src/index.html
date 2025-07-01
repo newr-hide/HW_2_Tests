@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Валидатор карт</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>Введите номер своей карты для проверки</h3>
+      <ul class="card__list">
+        <li class="card_item card_visa position_img">
+          <span class="hidden">Visa</span>
+        </li>
+        <li class="card_item card_mastercard position_img">
+          <span class="hidden">Mastercard</span>
+        </li>
+        <li class="card_item card_american_express position_img">
+          <span class="hidden">American Express</span>
+        </li>
+        <li class="card_item card_mir position_img">
+          <span class="hidden">Мир</span>
+        </li>
+        <li class="card_item discover position_img">
+          <span class="hidden">Discover</span>
+        </li>
+        <li class="card_item jcb position_img">
+          <span class="hidden">JCB</span>
+        </li>
+      </ul>
+      <form data-widget="card_form_widget">
+        <div class="form_control">
+          <input
+            id="cart-input"
+            type="text"
+            placeholder="Номер карты"
+          />
+        </div>
+        <button class="btn" id="card_submit">Нажми для проверки</button>
+        <button class="btn" id="input_reset">Сброс</button>
+      </form>
+    </div>
+  </body>
+</html>
