@@ -9,12 +9,14 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
 
   // Spin up a server for quick development
+  // devServer: {
+  //   historyApiFallback: true,
+  //   open: true,
+  //   compress: true,
+  // },
   devServer: {
-    historyApiFallback: true,
-    open: true,
-    compress: true,
+    port: 9000,
   },
-
   plugins: [
     // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
