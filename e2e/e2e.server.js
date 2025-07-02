@@ -1,14 +1,22 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config = require('../webpack.config');
+const config = require('../webpack.dev');
 
-const server = new WebpackDevServer(webpack(config), {});
-server.listen(9000, 'localhost', (err) => {
-  if (err) {
-    console.error('Ошибка запуска сервера:', err);
-    throw err;
-  }
-  if (process.send) {
-    process.send('ok');
-  }
-});
+// Компилируем конфигурацию Webpack
+const compiler = webpack(config);
+
+// Создаем экземпляр WebpackDevServer
+const server = new WebpackDevServer({
+  ...config.devServer, // Используем параметры из конфигурации
+  host: 'localhost',
+  port: 9000,
+  hot: true, 
+}, compiler);
+
+// Запускаем сервер
+server.start();
+console.log('Сервер запущен на http://localhost:9000');
+if (process.send) {
+  process.send('ok');
+}
+
